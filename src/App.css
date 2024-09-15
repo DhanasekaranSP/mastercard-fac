@@ -10,3 +10,9 @@ body{
 .primarycolor-bg{
     background: #cf4500;
 }
+
+.landing-page{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}

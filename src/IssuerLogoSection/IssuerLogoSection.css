@@ -1,0 +1,26 @@
+.issuer-logo-section{
+    background: #f1f1f1;
+    padding: 8px;
+    padding-bottom: 24px;
+}
+.issuer-logo-icon{
+    display: flex;
+    gap: 16px;
+    padding-left: 48px;
+    img{
+        background: white;
+        width: 12%;
+        border-radius: 15px;
+        box-shadow: 1px 1px 30px 5px #f1f1f1;
+        &:hover{
+            box-shadow: 0 0 10px #0003;
+            cursor: pointer;
+        }
+    }
+    
+}
+
+.hyperlink-ms:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
