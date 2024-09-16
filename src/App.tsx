@@ -1,4 +1,5 @@
 import './App.css'
+import { FacSection } from './FacSection/FacSection'
 import { HeroBannerSection } from './HeroBannerSection/HeroBannerSection'
 import { IssuerLogoSection } from './IssuerLogoSection/IssuerLogoSection'
 import { PopularCardSection } from './PopularCardSection/PopularCardSection'
@@ -10,6 +11,7 @@ function App() {
       <HeroBannerSection />
       <PopularCardSection />
       <IssuerLogoSection />
+      <FacSection />
 
     </div>
   )
