@@ -8,7 +8,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import 'swiper/css/navigation';
+
+import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
 export const PopularCardSection = () => {
     return (
@@ -23,16 +25,16 @@ export const PopularCardSection = () => {
                 grabCursor={true}
                 centeredSlides={true}
                 slidesPerView={'auto'}
+                loop={true}
                 coverflowEffect={{
                     rotate: 40,
                     stretch: 0,
                     depth: 100,
-                    modifier: 1,
-                    slideShadows: true,
+                    modifier: 0,
                 }}
-                pagination={true}
-                modules={[EffectCoverflow, Pagination]}
-                className="mySwiper"
+                pagination={{ clickable: true }}
+                modules={[EffectCoverflow, Pagination, Navigation]}
+                className="swiper_container"
             >
 
                 {popularCards.map((card) => {

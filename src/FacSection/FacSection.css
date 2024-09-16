@@ -5,3 +5,15 @@
     
     font-weight: 500;
 }
+
+.css-nt424e-MuiPaper-root-MuiAccordion-root.Mui-expanded{
+    margin:0 !important;
+}
+
+.css-nt424e-MuiPaper-root-MuiAccordion-root::before{
+    opacity: 0 !important;
+}
+
+.css-nt424e-MuiPaper-root-MuiAccordion-root{
+    border-bottom: 1px solid #dcdcdc
+}
