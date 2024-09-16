@@ -15,5 +15,6 @@
 }
 
 .css-nt424e-MuiPaper-root-MuiAccordion-root{
-    border-bottom: 1px solid #dcdcdc
+    border-bottom: 1px solid #dcdcdc;
+    box-shadow: none !important;
 }

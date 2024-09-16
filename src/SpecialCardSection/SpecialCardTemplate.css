@@ -1,0 +1,46 @@
+.special-card-template{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    border-radius: 15px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 20px 3px #f1f1f1;
+    text-align: left;
+    gap: 8px;
+    h4,h5,p{
+        margin: 0;
+    }
+    &:hover{
+        transform: scale(1.01);
+        cursor: pointer;
+    }
+}
+
+.special-card-image{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0
+}
+
+.special-card-content{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 1rem;
+}
+
+.special-card-cta{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    :hover{
+        cursor: pointer;
+    }
+    h5:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
