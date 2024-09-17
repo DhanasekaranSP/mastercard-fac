@@ -32,7 +32,7 @@ export const PopularCardSection = () => {
                     depth: 100,
                     modifier: 0,
                 }}
-                pagination={{ clickable: true }}
+                pagination={{ el: '.swiper-pagination', clickable: true }}
                 modules={[EffectCoverflow, Pagination, Navigation]}
                 className="swiper_container"
             >
@@ -45,10 +45,8 @@ export const PopularCardSection = () => {
                     )
                 })}
             </Swiper>
+            <div className="swiper-pagination"></div>
 
-            <div>
-
-            </div>
 
             <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: "16px" }}>
                 <div className="view-all-cards primarycolor-bg">

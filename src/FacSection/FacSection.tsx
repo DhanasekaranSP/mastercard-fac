@@ -26,7 +26,7 @@ export const FacSection = () => {
                                 >
                                     <>{q.question}</>
                                 </AccordionSummary>
-                                <AccordionDetails>
+                                <AccordionDetails style={{ whiteSpace: "pre-line" }}>
                                     <>{q.answer}</>
                                 </AccordionDetails>
                             </Accordion>
