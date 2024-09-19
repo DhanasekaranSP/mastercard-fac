@@ -19,7 +19,7 @@ export const FacSection = () => {
         setFaqData(response);
     }
     return (
-        <div className='fac-section'>
+        <div className='fac-section left-right-padding'>
             <h5 className='fac-section-title'>
                 FAC Section
             </h5>
@@ -35,7 +35,7 @@ export const FacSection = () => {
                                 >
                                     <>{q.question}</>
                                 </AccordionSummary>
-                                <AccordionDetails style={{ whiteSpace: "pre-line" }}>
+                                <AccordionDetails style={{ whiteSpace: "pre-line", paddingLeft: 0, paddingTop: 0, lineHeight: "150%" }}>
                                     <>{q.answer}</>
                                 </AccordionDetails>
                             </Accordion>

@@ -18,3 +18,7 @@
     border-bottom: 1px solid #dcdcdc;
     box-shadow: none !important;
 }
+
+.css-1f773le-MuiButtonBase-root-MuiAccordionSummary-root  {
+    padding: 0 !important;
+}

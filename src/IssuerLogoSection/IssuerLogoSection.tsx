@@ -5,7 +5,7 @@ import LbLogo from "../assets/images/lb-issuer-logo.jpeg"
 export const IssuerLogoSection = () => {
     return (
         <>
-            <div className='issuer-logo-section'>
+            <div className='issuer-logo-section left-right-padding'>
                 <h5 className="issuer-logo-title">
                     Find a Mastercard from your favorite financial institution
                 </h5>
@@ -16,7 +16,7 @@ export const IssuerLogoSection = () => {
                 </div>
             </div>
 
-            <div className='benifits-hyperlink'>
+            <div className='benifits-hyperlink left-right-padding'>
                 <p>For Mastercard Benefit inquiries please reach out to <span onClick={() => {
                     window.open('https://www.mastercard.us/content/dam/mccom/global/documents/global-services-phone-numbers.pdf', '_blank');
                 }} className='hyperlink-ms primarycolor'>Mastercard Global EmergencyServices (PDF, 307 KB).</span></p>

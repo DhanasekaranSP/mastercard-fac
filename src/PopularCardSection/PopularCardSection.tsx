@@ -26,7 +26,7 @@ export const PopularCardSection = () => {
     }
     console.log("popularCardsData:", popularCardsData)
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: "4px" }}>
+        <div className="popular-cards-section left-right-padding" style={{ display: 'flex', flexDirection: 'column', gap: "4px" }}>
 
             <h5>
                 Our most Popular Credit and Debit Cards and their Benefits
