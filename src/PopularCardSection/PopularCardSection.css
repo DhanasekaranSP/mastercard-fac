@@ -19,3 +19,20 @@
     position: relative !important;
   }
 
+  
+  .swiper_container {
+    height: 350px;
+    padding: 16px !important;
+    position: relative;
+  }
+
+  
+  .swiper-slide-shadow-left,
+  .swiper-slide-shadow-right {
+    display: none;
+  }
+
+  
+  .swiper-pagination .swiper-pagination-bullet-active {
+    background: #cf4500;
+  }

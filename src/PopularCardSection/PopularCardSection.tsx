@@ -26,13 +26,14 @@ export const PopularCardSection = () => {
     }
     console.log("popularCardsData:", popularCardsData)
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: "16px" }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: "4px" }}>
 
             <h5>
                 Our most Popular Credit and Debit Cards and their Benefits
             </h5>
 
             <Swiper
+
                 effect={'coverflow'}
                 spaceBetween={30}
                 grabCursor={true}
@@ -40,12 +41,12 @@ export const PopularCardSection = () => {
                 slidesPerView={'auto'}
                 loop={true}
                 // loopAdditionalSlides={-1}
-                initialSlide={1}
+                // initialSlide={1}
                 coverflowEffect={{
                     rotate: 40,
                     stretch: 0,
                     depth: 100,
-                    modifier: 0,
+                    modifier: 1,
                 }}
                 pagination={{ el: '.swiper-pagination', clickable: true }}
                 modules={[EffectCoverflow, Pagination, Navigation]}
