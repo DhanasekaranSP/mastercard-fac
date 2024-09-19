@@ -7,11 +7,10 @@ export const CardTemplate = (props: CardTemplateI) => {
     return (
         <div className='card-template'>
             <img className='card-image' src={imageUrl} />
-
-            <h4 className='card-title'>{title}</h4>
-
-            <p className='card-text'>{description}</p>
-
+            <div className='card-content'>
+                <h4 className='card-title'>{title}</h4>
+                <p className='card-text'>{description}</p>
+            </div>
             <div className='card-cta'>
                 <h5 className='card-cta-text primarycolor'>
                     View Card

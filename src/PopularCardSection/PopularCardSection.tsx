@@ -1,8 +1,6 @@
 import { CardTemplate } from "./CardTemplate"
-import { popularCards } from "./constants"
 
 import './PopularCardSection.css'
-
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -12,7 +10,21 @@ import 'swiper/css/navigation';
 
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
+import { useEffect, useState } from 'react';
+// import { getAllPopularCards } from '../common/repo';
+import { CardTemplateI } from './model';
+
 export const PopularCardSection = () => {
+    useEffect(() => { fetchData() }, []);
+    const [popularCardsData, setPopularCardsData] = useState<CardTemplateI[]>();
+
+    const fetchData = async () => {
+        const response = await fetch('http://localhost:8000/popular-cards/');
+        const data = await response.json();
+        setPopularCardsData(data)
+        // setPopularCardsData(response);
+    }
+    console.log("popularCardsData:", popularCardsData)
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: "16px" }}>
 
@@ -22,10 +34,13 @@ export const PopularCardSection = () => {
 
             <Swiper
                 effect={'coverflow'}
+                spaceBetween={30}
                 grabCursor={true}
                 centeredSlides={true}
                 slidesPerView={'auto'}
                 loop={true}
+                // loopAdditionalSlides={-1}
+                initialSlide={1}
                 coverflowEffect={{
                     rotate: 40,
                     stretch: 0,
@@ -37,9 +52,9 @@ export const PopularCardSection = () => {
                 className="swiper_container"
             >
 
-                {popularCards.map((card) => {
+                {popularCardsData?.map((card) => {
                     return (
-                        <SwiperSlide style={{ width: "30%" }}>
+                        <SwiperSlide key={card.id} style={{ width: "30%" }}>
                             <CardTemplate id={card.id} title={card.title} description={card.description} imageUrl={card.imageUrl} />
                         </SwiperSlide>
                     )
