@@ -13,18 +13,18 @@ import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import { useEffect, useState } from 'react';
 // import { getAllPopularCards } from '../common/repo';
 import { CardTemplateI } from './model';
+import { getAllPopularCards } from "../common/repo";
 
 export const PopularCardSection = () => {
     useEffect(() => { fetchData() }, []);
     const [popularCardsData, setPopularCardsData] = useState<CardTemplateI[]>();
 
     const fetchData = async () => {
-        const response = await fetch('http://localhost:8000/popular-cards/');
-        const data = await response.json();
-        setPopularCardsData(data)
+        const response = await getAllPopularCards();
+        setPopularCardsData(response)
         // setPopularCardsData(response);
     }
-    console.log("popularCardsData:", popularCardsData)
+
     return (
         <div className="popular-cards-section left-right-padding" style={{ display: 'flex', flexDirection: 'column', gap: "4px" }}>
 

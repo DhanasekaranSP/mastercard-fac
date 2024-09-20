@@ -1,9 +1,20 @@
+import { useEffect, useState } from 'react';
 import './SpecialCardSection.css'
 import { SpecialCardTemplate } from './SpecialCardTemplate'
-import { specialCard } from './constant'
+import { getAllSpecialCards } from '../common/repo';
+import { SpecialCardTemplateI } from './model';
 
 
 export const SpecialCardSection = () => {
+    useEffect(() => { fetchData() }, []);
+    const [specialCardsData, setSpecialCardsData] = useState<SpecialCardTemplateI[]>();
+
+    const fetchData = async () => {
+        const response = await getAllSpecialCards();
+        setSpecialCardsData(response)
+        // setPopularCardsData(response);
+    }
+
     return (
         <div className='special-card-section left-right-padding' style={{ display: 'flex', flexDirection: 'column', gap: "16px" }}>
             <div>
@@ -14,7 +25,7 @@ export const SpecialCardSection = () => {
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'row', gap: "16px", justifyContent: "space-around" }}>
-                {specialCard.map((specialcard) => {
+                {specialCardsData?.map((specialcard) => {
                     return (
                         <SpecialCardTemplate id={specialcard.id} imageUrl={specialcard.imageUrl} title={specialcard.title} description={specialcard.description} ctaname={specialcard.ctaname} />
                     )
