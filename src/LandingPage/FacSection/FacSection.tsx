@@ -6,7 +6,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import { useEffect, useState } from 'react';
-import { getAllFaq } from '../common/repo';
+import { getAllFaq } from '../../common/repo';
 import { FacSectionI } from './model';
 
 

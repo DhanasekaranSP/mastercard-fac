@@ -13,7 +13,7 @@ import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import { useEffect, useState } from 'react';
 // import { getAllPopularCards } from '../common/repo';
 import { CardTemplateI } from './model';
-import { getAllPopularCards } from "../common/repo";
+import { getAllPopularCards } from "../../common/repo";
 
 export const PopularCardSection = () => {
     useEffect(() => { fetchData() }, []);

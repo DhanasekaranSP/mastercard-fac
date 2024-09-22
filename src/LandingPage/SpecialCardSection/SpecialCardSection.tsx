@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './SpecialCardSection.css'
 import { SpecialCardTemplate } from './SpecialCardTemplate'
-import { getAllSpecialCards } from '../common/repo';
+import { getAllSpecialCards } from '../../common/repo';
 import { SpecialCardTemplateI } from './model';
 
 
@@ -11,8 +11,7 @@ export const SpecialCardSection = () => {
 
     const fetchData = async () => {
         const response = await getAllSpecialCards();
-        setSpecialCardsData(response)
-        // setPopularCardsData(response);
+        setSpecialCardsData(response);
     }
 
     return (

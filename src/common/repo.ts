@@ -1,7 +1,7 @@
 import { fetchData } from "./api"
-import { FacSectionI } from "../FacSection/model"
-import { CardTemplateI } from "../PopularCardSection/model"
-import { SpecialCardTemplateI } from "../SpecialCardSection/model"
+import { FacSectionI } from "../LandingPage/FacSection/model"
+import { CardTemplateI } from "../LandingPage/PopularCardSection/model"
+import { SpecialCardTemplateI } from "../LandingPage/SpecialCardSection/model"
 
 export const getAllFaq =  async ()=>{
     const response  = await fetchData("/faqs")

@@ -1,4 +1,4 @@
-import herobannerimage from "../assets/images/HeroBanner.jpg"
+import herobannerimage from "../../assets/images/HeroBanner.jpg"
 export const HeroBannerSection = () => {
     return (
         <div style={{

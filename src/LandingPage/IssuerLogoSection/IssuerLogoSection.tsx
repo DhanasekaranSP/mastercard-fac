@@ -1,6 +1,6 @@
 import './IssuerLogoSection.css'
-import SbLogo from "../assets/images/sb-issuer-logo.jpeg"
-import LbLogo from "../assets/images/lb-issuer-logo.jpeg"
+import SbLogo from "../../assets/images/sb-issuer-logo.jpeg"
+import LbLogo from "../../assets/images/lb-issuer-logo.jpeg"
 
 export const IssuerLogoSection = () => {
     return (
