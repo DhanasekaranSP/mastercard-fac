@@ -1,13 +1,10 @@
-export type AccordionItem ={
-    title: string;
-    children: ChildItem[];
-}
-
-export type ChildItem = {
+export type Item ={
     id: number;
-    label: string;
+    name: string;
 }
 
-export type FilterAccordionSectionProps = {
-    items: AccordionItem[];
+export type Title = {
+    id: number;
+    name: string;
+    items: Item[];
 }

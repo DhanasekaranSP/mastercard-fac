@@ -7,35 +7,16 @@ import { SpecialCardSection } from './LandingPage/SpecialCardSection/SpecialCard
 import { FilterAccordionSection } from './OfferingPage/FilterAccordionSection/FilterAccordionSection'
 
 function App() {
-
-  const items = [
-    {
-      title: 'Fruits',
-      children: [
-        { id: 1, label: 'Apple' },
-        { id: 2, label: 'Banana' },
-        { id: 3, label: 'Cherry' },
-      ],
-    },
-    {
-      title: 'Vegetables',
-      children: [
-        { id: 4, label: 'Carrot' },
-        { id: 5, label: 'Lettuce' },
-        { id: 6, label: 'Spinach' },
-      ],
-    },
-  ];
   return (
     <div className='landing-page'>
-      <HeroBannerSection />
+      {/* <HeroBannerSection />
       <PopularCardSection />
       <IssuerLogoSection />
       <FacSection />
-      <SpecialCardSection />
-      <FilterAccordionSection items={items} />
+      <SpecialCardSection /> */}
+      <FilterAccordionSection />
     </div>
   )
 }
 
-export default App
+export default App;

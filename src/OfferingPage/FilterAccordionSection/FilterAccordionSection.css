@@ -1,0 +1,27 @@
+.filter-accordion-section{
+    width: fit-content;
+    h3,p{
+        color: #cf4500;
+        font-weight: 600;
+        svg{
+            color: #cf4500;
+        }
+    }
+}
+
+.accordion-list {
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+}
+
+
+
+.css-nt424e-MuiPaper-root-MuiAccordion-root.Mui-expanded{
+    margin: 0px !important;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    border-top: 1px solid rgba(0,0,0,0.12);
+}
+
+.css-nt424e-MuiPaper-root-MuiAccordion-root{
+    box-shadow: none !important;
+}
