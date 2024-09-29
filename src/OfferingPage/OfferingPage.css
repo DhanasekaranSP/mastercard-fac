@@ -1,0 +1,6 @@
+.offering-page{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-bottom: 30px;
+}

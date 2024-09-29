@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
     Accordion,
     AccordionSummary,
@@ -10,20 +10,18 @@ import {
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './FilterAccordionSection.css';
-// import { Title } from './model';
-import { TitleI } from './constants';
+import { TitleI } from './model';
+import { getAllFilterCategories } from '../../common/repo';
 
 export const FilterAccordionSection = () => {
-    // const [titles, setTitles] = useState<Title[]>([]);
-    // useEffect(() => {
-    //     const fetchTitles = async () => {
-    //         const response = await fetch('/api/titles/');
-    //         const data = await response.json();
-    //         setTitles(data);
-    //     };
 
-    //     fetchTitles();
-    // }, []);
+    useEffect(() => { fetchData() }, []);
+
+    const [filterData, setFilterData] = useState<TitleI[]>();
+    const fetchData = async () => {
+        const response = await getAllFilterCategories();
+        setFilterData(response);
+    }
 
     const [selectedItems, setSelectedItems] = useState<{ title: string; item: string }[]>([]);
     const handleCheckboxChange = (titleName: string, itemName: string) => {
@@ -53,26 +51,26 @@ export const FilterAccordionSection = () => {
 
     return (
         <div className='filter-accordion-section'>
-            <h2 style={{ fontWeight: "normal", padding: "0px 12px" }}>Filters</h2>
-            {TitleI.map((title) => (
+            <h2 style={{ fontWeight: "normal" }}>Filters</h2>
+            {filterData?.map((title) => (
                 <Accordion key={title.id}>
                     <AccordionSummary className='accordion-title' expandIcon={<ExpandMoreIcon />}>
-                        <Typography>{title.name}</Typography>
+                        <Typography>{title.parentname}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <div className="accordion-list">
-                            {title.items.map(item => (
+                            {title.childitems.map(item => (
                                 <FormControlLabel
                                     key={item.id}
                                     control={
                                         <Checkbox
                                             checked={selectedItems.some(
-                                                selected => selected.title === title.name && selected.item === item.name
+                                                selected => selected.title === title.parentname && selected.item === item.childname
                                             )}
-                                            onChange={() => handleCheckboxChange(title.name, item.name)}
+                                            onChange={() => handleCheckboxChange(title.parentname, item.childname)}
                                         />
                                     }
-                                    label={<span className="accordion-item">{item.name}</span>}
+                                    label={<span className="accordion-item">{item.childname}</span>}
                                 />
                             ))}
                         </div>

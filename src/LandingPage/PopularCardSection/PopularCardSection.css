@@ -1,14 +1,20 @@
 .view-all-cards{
-    display: flex;
+    /* display: flex;
     align-items: center;
+    justify-items: center; */
+    border-radius: 1.5rem;
+    padding: .6rem 1.5rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: #fff;
+    background-color: #cf4500;
     color: white;
-    border-radius: 16px;
     width: fit-content;
-    padding: 12px;
-    justify-items: center;
     &:hover{
         cursor: pointer;
-        opacity: 0.8;
+        box-shadow: 0 .125rem .25rem 0 rgba(207, 69, 0, .74);
+        background-color: #852d01;
+        transition: all .3s;
     }
 }
 

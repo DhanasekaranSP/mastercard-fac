@@ -15,6 +15,9 @@ import { useEffect, useState } from 'react';
 import { CardTemplateI } from './model';
 import { getAllPopularCards } from "../../common/repo";
 
+import { Link } from 'react-router-dom';
+
+
 export const PopularCardSection = () => {
     useEffect(() => { fetchData() }, []);
     const [popularCardsData, setPopularCardsData] = useState<CardTemplateI[]>();
@@ -65,9 +68,11 @@ export const PopularCardSection = () => {
 
 
             <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: "16px" }}>
-                <div className="view-all-cards primarycolor-bg">
-                    View all cards
-                </div>
+                <Link to="/offering-page" style={{ textDecoration: 'none' }}>
+                    <div className="view-all-cards primarycolor-bg">
+                        View all cards
+                    </div>
+                </Link>
             </div>
         </div>
     )

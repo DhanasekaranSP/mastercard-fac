@@ -1,10 +1,10 @@
 export type Item ={
     id: number;
-    name: string;
+    childname: string;
 }
 
-export type Title = {
+export type TitleI = {
     id: number;
-    name: string;
-    items: Item[];
+    parentname: string;
+    childitems: Item[];
 }

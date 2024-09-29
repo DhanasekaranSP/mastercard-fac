@@ -1,40 +1,40 @@
-import { Title } from "./model";
+import { TitleI } from "./model";
 
-export const TitleI:Title[] = [
+export const Title:TitleI[] = [
     {
         id: 1,
-        name: "Fruits",
-        items:[
-            { id: 1, name: 'Apple' },
-            { id: 2, name: 'Banana' },
-            { id: 3, name: 'Cherry' },
+        parentname: "Fruits",
+        childitems:[
+            { id: 1, childname: 'Apple' },
+            { id: 2, childname: 'Banana' },
+            { id: 3, childname: 'Cherry' },
           ]
     },
     {
         id: 2,
-        name: "Desserts",
-        items:[
-            { id: 1, name: 'Ice cream' },
-            { id: 2, name: 'Chocolate' },
-            { id: 3, name: 'Warfles' },
+        parentname: "Desserts",
+        childitems:[
+            { id: 1, childname: 'Ice cream' },
+            { id: 2, childname: 'Chocolate' },
+            { id: 3, childname: 'Warfles' },
           ]
     },    {
         id: 3,
-        name: "Jobs",
-        items:[
-            { id: 1, name: 'Icecream' },
-            { id: 2, name: 'Chocolate' },
-            { id: 3, name: 'Warfles' },
+        parentname: "Jobs",
+        childitems:[
+            { id: 1, childname: 'Icecream' },
+            { id: 2, childname: 'Chocolate' },
+            { id: 3, childname: 'Warfles' },
           ]
     },
     {
         id: 4,
-        name: "working",
-        items:[
-            { id: 1, name: 'Icecream' },
-            { id: 2, name: 'Chocolate' },
-            { id: 3, name: 'Warfles' },
-            { id: 4, name: 'cakessssssss' },
+        parentname: "working",
+        childitems:[
+            { id: 1, childname: 'Icecream' },
+            { id: 2, childname: 'Chocolate' },
+            { id: 3, childname: 'Warfles' },
+            { id: 4, childname: 'cakessssssss' },
           ]
     },    
   ];

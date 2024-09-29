@@ -1,5 +1,6 @@
 .filter-accordion-section{
     width: fit-content;
+    margin-left: 16px;
     h3,p{
         color: #cf4500;
         font-weight: 600;

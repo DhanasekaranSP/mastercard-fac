@@ -1,0 +1,78 @@
+.offering-card-template{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 16px;
+    box-shadow: 1px 2px 5px 5px #f1f1f1;
+}
+
+.offering-card-title{
+    padding-top: 20px;
+    padding-left: 49px;
+    padding-right: 49px;
+    font-size: 2.25rem;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.offering-card-content{
+    display: flex;
+    flex-direction: row;
+    padding-left: 49px;
+    padding-right: 49px;
+    gap: 8px;
+}
+
+.offering-card-content-image-side{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 25%;
+    img{
+        width: 100%;
+    }
+}
+
+
+.offering-card-content-cta{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.small-btn{
+    font-size: .55rem;
+    font-weight: 600;
+    color: #a9a9a9;
+    text-decoration: underline;
+    text-decoration-color: darkgray;
+    cursor: pointer;
+
+}
+
+.btn{
+    border-radius: 1.5rem;
+    padding: .6rem 1.5rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: #fff;
+    width: fit-content;
+    background-color: #cf4500;
+    &:hover{
+        box-shadow: 0 .125rem .25rem 0 rgba(207, 69, 0, .74);
+        background-color: #852d01;
+        transition: all .3s;
+}
+}
+
+.offering-card-content-description-side{
+    width: 75%;
+}
+.offering-card-charges{
+    background-color: #f1f1f1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 49px;
+    padding-right: 49px;
+}
