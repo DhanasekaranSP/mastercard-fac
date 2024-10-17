@@ -1,10 +1,11 @@
-export type Item ={
+export type ChildItemI ={
     id: number;
     childname: string;
+    checked:boolean;
 }
 
-export type TitleI = {
+export type FilterItemI = {
     id: number;
     parentname: string;
-    childitems: Item[];
+    childitems: ChildItemI[];
 }

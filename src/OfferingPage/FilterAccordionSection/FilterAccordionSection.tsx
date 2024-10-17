@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import {
     Accordion,
     AccordionSummary,
@@ -10,64 +9,51 @@ import {
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './FilterAccordionSection.css';
-import { TitleI } from './model';
-import { getAllFilterCategories } from '../../common/repo';
+import { FilterItemI } from './model';
 
-export const FilterAccordionSection = () => {
+type FilterAccordionSectionProps = {
+    filterData: FilterItemI[],
+    setFilterData: (value: React.SetStateAction<FilterItemI[]>) => void
+}
 
-    useEffect(() => { fetchData() }, []);
+export const FilterAccordionSection = (props: FilterAccordionSectionProps) => {
 
-    const [filterData, setFilterData] = useState<TitleI[]>();
-    const fetchData = async () => {
-        const response = await getAllFilterCategories();
-        setFilterData(response);
+    const { filterData, setFilterData } = props;
+
+    const handleCheckboxChange = (childId: number, checked: boolean) => {
+        console.log("handleCheckboxChange:", { childId, checked })
+        const changedItems = filterData.map((parent) => {
+            const changedChildItems = parent.childitems.map((child) => {
+                if (child.id == childId) {
+                    return { ...child, checked }
+                }
+                return child;
+            })
+            return { ...parent, childitems: changedChildItems };
+        })
+        setFilterData(changedItems);
+
     }
-
-    const [selectedItems, setSelectedItems] = useState<{ title: string; item: string }[]>([]);
-    const handleCheckboxChange = (titleName: string, itemName: string) => {
-        setSelectedItems((prevSelected) => {
-            const isSelected = prevSelected.some(
-                selected => selected.title === titleName && selected.item === itemName
-            );
-            const newSelected = isSelected
-                ? prevSelected.filter(selected => !(selected.title === titleName && selected.item === itemName))
-                : [...prevSelected, { title: titleName, item: itemName }];
-
-            logSelectedItems(newSelected); // Log selected items in a grouped manner
-            return newSelected;
-        });
-    };
-    const logSelectedItems = (selected: { title: string; item: string }[]) => {
-        const grouped = selected.reduce<{ [key: string]: string[] }>((acc, curr) => {
-            if (!acc[curr.title]) {
-                acc[curr.title] = [];
-            }
-            acc[curr.title].push(curr.item);
-            return acc;
-        }, {});
-
-        console.log("Selected Items:", grouped); // Log selected items grouped by title
-    };
 
     return (
         <div className='filter-accordion-section'>
             <h2 style={{ fontWeight: "normal" }}>Filters</h2>
-            {filterData?.map((title) => (
-                <Accordion key={title.id}>
+            {filterData?.map((filterItem) => (
+
+                <Accordion key={filterItem.id}>
                     <AccordionSummary className='accordion-title' expandIcon={<ExpandMoreIcon />}>
-                        <Typography>{title.parentname}</Typography>
+                        <Typography>{filterItem.parentname}</Typography>
                     </AccordionSummary>
+
                     <AccordionDetails>
                         <div className="accordion-list">
-                            {title.childitems.map(item => (
+                            {filterItem.childitems.map(item => (
                                 <FormControlLabel
                                     key={item.id}
                                     control={
                                         <Checkbox
-                                            checked={selectedItems.some(
-                                                selected => selected.title === title.parentname && selected.item === item.childname
-                                            )}
-                                            onChange={() => handleCheckboxChange(title.parentname, item.childname)}
+                                            checked={item.checked ?? false}
+                                            onChange={(_, checked) => { handleCheckboxChange(item.id, checked) }}
                                         />
                                     }
                                     label={<span className="accordion-item">{item.childname}</span>}
@@ -123,3 +109,32 @@ export const FilterAccordionSection = () => {
 //         </div>
 //     )
 // }
+
+
+// changes
+// const [selectedItems, setSelectedItems] = useState<{ title: string; item: string }[]>([]);
+
+// const handleCheckboxChange = (titleName: string, itemName: string) => {
+//     setSelectedItems((prevSelected) => {
+//         const isSelected = prevSelected.some(
+//             selected => selected.title === titleName && selected.item === itemName
+//         );
+//         const newSelected = isSelected
+//             ? prevSelected.filter(selected => !(selected.title === titleName && selected.item === itemName))
+//             : [...prevSelected, { title: titleName, item: itemName }];
+
+//         logSelectedItems(newSelected); // Log selected items in a grouped manner
+//         return newSelected;
+//     });
+// };
+// const logSelectedItems = (selected: { title: string; item: string }[]) => {
+//     const grouped = selected.reduce<{ [key: string]: string[] }>((acc, curr) => {
+//         if (!acc[curr.title]) {
+//             acc[curr.title] = [];
+//         }
+//         acc[curr.title].push(curr.item);
+//         return acc;
+//     }, {});
+
+//     console.log("Selected Items:", grouped); // Log selected items grouped by title
+// };

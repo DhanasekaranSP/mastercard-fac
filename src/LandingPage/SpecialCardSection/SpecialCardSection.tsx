@@ -17,7 +17,7 @@ export const SpecialCardSection = () => {
     return (
         <div className='special-card-section left-right-padding' style={{ display: 'flex', flexDirection: 'column', gap: "16px" }}>
             <div>
-                <h5>
+                <h5 style={{ fontSize: "1.5rem", fontWeight: "500", marginBottom: "1.5rem" }}>
                     Our most Popular Credit and Debit Cards and their Benefits
                 </h5>
                 Get the financial freedom you deserve. Credit cards offer rewards, services and spending power that can help make your financial and personal dreams come true.

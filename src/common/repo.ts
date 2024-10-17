@@ -1,12 +1,13 @@
 import { fetchData } from "./api"
-import { FacSectionI } from "../LandingPage/FacSection/model"
+import { FaqSectionI } from "../LandingPage/FaqSection/model"
 import { CardTemplateI } from "../LandingPage/PopularCardSection/model"
 import { SpecialCardTemplateI } from "../LandingPage/SpecialCardSection/model"
-import { TitleI } from "../OfferingPage/FilterAccordionSection/model"
+import { FilterItemI } from "../OfferingPage/FilterAccordionSection/model"
+import { OfferingCardI } from "../OfferingPage/OfferingCardSection/model"
 
 export const getAllFaq =  async ()=>{
     const response  = await fetchData("/faqs")
-    return response as FacSectionI[]
+    return response as FaqSectionI[]
 }
 
 export const getAllPopularCards = async () => {
@@ -21,5 +22,10 @@ export const getAllSpecialCards = async () => {
 
 export const getAllFilterCategories = async() =>{
     const response = await fetchData("/filter-categories")
-    return response as TitleI[]
+    return response as FilterItemI[]
+}
+
+export const getAllOfferingCards = async() =>{
+    const response = await fetchData("/offering-cards")
+    return response as OfferingCardI[]
 }

@@ -31,7 +31,7 @@ export const PopularCardSection = () => {
     return (
         <div className="popular-cards-section left-right-padding" style={{ display: 'flex', flexDirection: 'column', gap: "4px" }}>
 
-            <h5>
+            <h5 style={{ fontSize: "1.5rem", fontWeight: "500" }}>
                 Our most Popular Credit and Debit Cards and their Benefits
             </h5>
 

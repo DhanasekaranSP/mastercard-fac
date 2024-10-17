@@ -1,6 +1,6 @@
-import {FacSectionI} from './model'
+import {FaqSectionI} from './model'
 
-export const facquestionanswer:FacSectionI[]=[
+export const facquestionanswer:FaqSectionI[]=[
     {
         id:"1",
         question: "How do I find the best credit card?",

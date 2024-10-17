@@ -11,7 +11,7 @@
     padding-left: 49px;
     padding-right: 49px;
     font-size: 2.25rem;
-    font-weight: 400;
+    font-weight: 500;
     margin-bottom: 16px;
 }
 
@@ -39,11 +39,12 @@
     flex-direction: column;
     gap: 8px;
     align-items: center;
+    margin-bottom: 16px;
 }
 
 .small-btn{
     font-size: .55rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #a9a9a9;
     text-decoration: underline;
     text-decoration-color: darkgray;
@@ -67,12 +68,43 @@
 }
 
 .offering-card-content-description-side{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     width: 75%;
 }
+
+.offering-card-content-description-side-card-headline{
+    font-size: 1.25rem;
+    font-weight: 450;
+}
+
 .offering-card-charges{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: space-between;
     background-color: #f1f1f1;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 49px;
     padding-right: 49px;
+}
+
+
+
+.offering-card-charges-title{
+    font-weight: 600;   
+}
+
+.offering-card-charges-section{
+    display: flex;
+    flex-direction: row;
+    gap: 96px;
+}
+
+.offering-card-charges-container{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }

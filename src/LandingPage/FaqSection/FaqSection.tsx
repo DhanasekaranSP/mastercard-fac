@@ -1,4 +1,4 @@
-import './FacSection.css'
+import './FaqSection.css'
 
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -7,24 +7,24 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import { useEffect, useState } from 'react';
 import { getAllFaq } from '../../common/repo';
-import { FacSectionI } from './model';
+import { FaqSectionI } from './model';
 
 
-export const FacSection = () => {
+export const FaqSection = () => {
     useEffect(() => { fetchData() }, []);
-    const [faqData, setFaqData] = useState<FacSectionI[]>();
+    const [faqData, setFaqData] = useState<FaqSectionI[]>();
 
     const fetchData = async () => {
         const response = await getAllFaq();
         setFaqData(response);
     }
     return (
-        <div className='fac-section left-right-padding'>
-            <h5 className='fac-section-title'>
-                FAC Section
+        <div className='faq-section left-right-padding'>
+            <h5 className='faq-section-title' style={{ fontSize: "1.5rem", fontWeight: "500", marginBottom: "1.5rem" }}>
+                FAQ Section
             </h5>
 
-            <div className='fac-section-accordion'>
+            <div className='faq-section-accordion'>
                 <div>
                     {faqData?.map((q) => {
                         return (
