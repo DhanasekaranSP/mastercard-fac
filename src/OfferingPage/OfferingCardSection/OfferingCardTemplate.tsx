@@ -2,35 +2,39 @@ import { Link } from 'react-router-dom';
 import './OfferingCardTemplate.css'
 import { OfferingCardI } from './model';
 
-export const OfferingCardTemplate = (props: OfferingCardI) => {
+type OfferingCardTemplateProps = {
+    offeringCard: OfferingCardI
+}
 
-    const { cardName, cardDescription, cardheadLine, cardImageUrl, annualFees, applyNowUrl, rateFeesUrl, specialFees } = props;
+export const OfferingCardTemplate = (props: OfferingCardTemplateProps) => {
+    // const { cardName, cardDescription, cardheadLine, cardImageUrl, annualFees, applyNowUrl, rateFeesUrl, specialFees } = props;
+    const { offeringCard } = props
 
     return (
         <div className="offering-card-template">
             <div>
                 <div className="offering-card-title">
-                    {cardName}
+                    {offeringCard.cardName}
                 </div>
 
                 <div className="offering-card-content">
 
                     <div className="offering-card-content-image-side">
-                        <Link to={applyNowUrl}>
+                        <Link to={offeringCard.applyNowUrl}>
                             <div className='offering-card-content-image'>
-                                <img src={cardImageUrl} alt="Image" />
+                                <img src={offeringCard.cardImageUrl} alt="Image" />
                             </div>
                         </Link>
 
                         <div className='offering-card-content-cta'>
 
-                            <Link to={applyNowUrl}>
+                            <Link to={offeringCard.applyNowUrl}>
                                 <button className='btn'>
                                     Apply now
                                 </button>
                             </Link>
 
-                            <Link to={rateFeesUrl}>
+                            <Link to={offeringCard.rateFeesUrl}>
                                 <div className='small-btn'>
                                     See Rates & fees
                                 </div>
@@ -40,12 +44,12 @@ export const OfferingCardTemplate = (props: OfferingCardI) => {
 
                     <div className="offering-card-content-description-side">
                         <div className="offering-card-content-description-side-card-headline">
-                            {cardheadLine}
+                            {offeringCard.cardheadLine}
                         </div>
 
                         <div className="offering-card-content-description-side-card-description">
                             <ul >
-                                {cardDescription.split('. ').map((line, i) => (
+                                {offeringCard.cardDescription.split('. ').map((line, i) => (
                                     <li style={{ paddingBottom: '8px' }} key={i}>{line.trim()}</li>
                                 ))}
                             </ul>
@@ -60,16 +64,16 @@ export const OfferingCardTemplate = (props: OfferingCardI) => {
                                 Annual Fee
                             </div>
                             <div className='offering-card-charges-description'>
-                                ${annualFees}
+                                ${offeringCard.annualFees}
                             </div>
                         </div>
-                        {specialFees && (
+                        {offeringCard.specialFees && (
                             <div className='offering-card-charges-container'>
                                 <div className='offering-card-charges-title'>
                                     Special Fee
                                 </div>
                                 <div className='offering-card-charges-description'>
-                                    ${specialFees}
+                                    ${offeringCard.specialFees}
                                 </div>
                             </div>
                         )}
