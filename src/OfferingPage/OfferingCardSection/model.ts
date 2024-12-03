@@ -1,3 +1,4 @@
+import { ChildItemI } from "../FilterAccordionSection/model"
 export type CategoryListI={
     parentId:number,
     childId:number
@@ -15,6 +16,6 @@ export type OfferingCardI ={
     annualFees:number,
     specialFees?:number,
 
-    issuerId:number,
+    issuer:ChildItemI[],
     categoryList:CategoryListI[]
 }
